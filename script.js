@@ -103,13 +103,12 @@ const saveButtonEventListener = (event) => {
 
     const id = event.target.id;
     const ID = id.split('-')[1]
-    const className = event.target.className;
 
     const inputElement = document.querySelector(`#i-${ID}-item-text-area`);
 
     const newValue = inputElement.value;
 
-    if(!newValue) {
+    if(newValue) {
 
         itemsList = itemsList.map((item) => {
 
@@ -122,6 +121,8 @@ const saveButtonEventListener = (event) => {
             }
         })
     }
+
+    console.log(itemsList);
 
     updateDOM();
 }
